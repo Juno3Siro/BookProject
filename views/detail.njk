@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+
+    <body>
+        <header>
+            <h2>{{book.getTitle()}}</h2>
+        </header>
+        <small>
+            {{book.getAuthor()}}
+        </small> |
+        <small>
+            {{book.getPublisher().getName()}}
+        </small> |
+        <small>
+            {{book.getPrice()}}
+        </small> |
+        <form action="" method="get">
+            <input type="submit" value="Edit">
+        </form>
+        <form action="" method="">
+            <input type="submit" value="delete">
+        </form>
+    </body>
+</html>

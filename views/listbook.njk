@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>
+
+    </title>
+</head>
+<body>
+<article>
+    <section>
+    </section>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/">Search</a> |
+        <a href="/create"> Create book </a> |
+    </nav>
+    <section>
+        <div>
+            <form action="/search-keyword" method="get">
+                <label>
+                    <input type="text" name="keyword" >
+                </label>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+</article>
+
+<ul>
+    {% for book in books %}
+    <li>
+        <a href="/detail/{{book.getId()}}">{{book.getTitle()}}-{{book.getPublisher().getName()}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

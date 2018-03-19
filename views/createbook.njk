@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+<nav>
+    <a href="/">Search</a> |
+    <a href="/books">Home</a> |
+    <a href="/create"> Create book </a> |
+</nav>
+<section>
+    <form action="/createbook.njk" method="post">
+        <label> Title </label>
+
+        <input type="text" name="title" placeholder=" ">
+        <label> Author </label>
+
+        <input type="text" name="author" placeholder=" ">
+        <label> Publisher </label>
+
+        <select id="publisher" name="publisher_id">
+            <option value="">--Chọn--</option>
+            {% for publisher in publishers %}
+            <option value="{{publisher.id}}">{{publisher.name}}</option>
+            {% endfor %}
+        </select>
+        <label> Price </label>
+        <input type="text" name="price" placeholder=" ">
+        <input type="submit" value="OK">
+    </form>
+</section>
+</body>
+</html>
