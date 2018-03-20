@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+#menu ul {
+  background-color: blue;
+  text-align: center;
+  width: 100%;
+  /*overflow: hidden;*/
+}
+#menu li {
+  color: #f1f1f1;
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: -5px;
+}
+#menu a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+#menu a:hover {
+  background: #F1F1F1;
+  color: #333;
+}
+

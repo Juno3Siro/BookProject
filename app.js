@@ -23,15 +23,17 @@ nunjucks.configure('views', {
 });
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('books.repo', new BookRepository(connection));
 app.set('book.searcher', new Searcher(connection, new BookFactory()));
 app.set('publishers.provider', new PublisherProvider(connection, new PublisherFactory()));
 
-app.use('/', index);
+app.use('/', index.Ajax);
+app.use('/', index.Books);
 
 module.exports = app;

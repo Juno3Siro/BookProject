@@ -49,7 +49,9 @@ class BookController {
      */
     search(request, response, next) {
         request.app.get('book.searcher').search(request.condition)
-            .then(books => response.render('listbook.njk',{books: books}))
+            .then((result) => {
+                response.json(result.map(element => element.toJson()))
+            })
             .catch(next)
     }
 

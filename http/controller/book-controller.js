@@ -67,7 +67,7 @@ class BookController {
      */
     getAll(request, response, next) {
         request.app.get('book.searcher').search(request.condition)
-            .then(books => response.render('listbook.njk',{books:books}))
+            .then(books => response.render('list-book.njk',{books:books}))
             .catch(next)
     }
 
