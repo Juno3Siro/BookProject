@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#inputKeyword').keydown(function () {
+    $('#inputKeyword').change(function () {
         $.get('/api/books', {
             keyword: $('#inputKeyword').val()
         }).then(renderBooks)

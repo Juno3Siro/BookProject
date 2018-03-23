@@ -1,33 +1,38 @@
 <html>
 <head>
-    <title>Books</title>
+
 </head>
 <body>
-<nav>
-    <a href="/">Search</a> |
-    <a href="/books">Home</a> |
-    <a href="/create"> Create book </a> |
-</nav>
-<section>
-    <form action="/createbook.njk" method="post">
-        <label> Title </label>
+<div>
+    <header>
+        <a href="/create">Create</a>
+    </header>
+    <form action="/create" method="post">
+        <label>Title</label>
+        <br/>
 
-        <input type="text" name="title" placeholder=" ">
-        <label> Author </label>
+        <input id="inputKeyword" type="text" name="title" placeholder="Enter Title">
+        <br/>
 
-        <input type="text" name="author" placeholder=" ">
-        <label> Publisher </label>
+        <label>Author</label>
+        <br/>
 
-        <select id="publisher" name="publisher_id">
-            <option value="">--Chọn--</option>
-            {% for publisher in publishers %}
-            <option value="{{publisher.id}}">{{publisher.name}}</option>
-            {% endfor %}
-        </select>
-        <label> Price </label>
-        <input type="text" name="price" placeholder=" ">
-        <input type="submit" value="OK">
+        <input type="text" name="author" placeholder="Author">
+        <br/>
+
+        <label>Publisher</label>
+        <br/>
+        <section>
+            <select id="publisher" >
+                {% for publisher in publishers %}
+                <option value="{{publisher.getId()}}" name="publisher">{{publisher.getName()}}</option>
+                {% endfor %}
+            </select>
+        </section>
+        <label>price</label>
+        <input type="text" name="price" placeholder="price"><br/>
+        <input type="submit" value="create" class="btn btn-primary"><br/>
     </form>
-</section>
+</div>
 </body>
 </html>
